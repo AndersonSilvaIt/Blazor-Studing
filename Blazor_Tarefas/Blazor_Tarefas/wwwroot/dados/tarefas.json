@@ -1,0 +1,14 @@
+[
+	{
+		"id": "f6f60833-abbd-4de3-a9f3-ba328907878c",
+		"descricao": "Fazer algum curso Blazor",
+		"concluida": false,
+		"datacriacao": "2025-01-08"
+	},
+	{
+		"id": "f17a59a5-1d23-49cd-8c44-fe8ed3c6eb58",
+		"descricao": "Estudar Blazor",
+		"concluida": false,
+		"datacriacao": "2025-01-09"
+	}
+]
