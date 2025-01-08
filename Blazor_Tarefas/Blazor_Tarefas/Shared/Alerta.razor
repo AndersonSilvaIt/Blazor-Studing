@@ -3,8 +3,18 @@
     <strong>@Mensagem</strong>
 </div>
 
+<div>
+    if(@ChildContent == null){
+
+        <span style="color: black;">Texto padrão.</span>
+
+    }else{
+        @ChildContent
+    }
+</div>
+
 @code {
 
     [Parameter] public string Mensagem { get; set; }
-
+    [Parameter] public RenderFragment ChildContent { get; set; }
 }
