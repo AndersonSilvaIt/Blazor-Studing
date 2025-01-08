@@ -2,8 +2,24 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>@Mensagem</h1>
+<h2>Saudacao()</h2>
 
-Welcome to your new app.
+<button @onclick="AtualizaMensagem">Atualizar Mensagem</button>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<input @bind="@Mensagem" />
+
+@code {
+
+    public string Mensagem { get; set; } = "Ola Bruce";
+
+    private string Suadacao()
+    {
+        return "Bem vindo, ao Blazor";
+    }
+
+    private void AtualizaMensagem()
+    {
+        Mensagem = "Olá Blazor, tudo bem?";
+    }
+}
