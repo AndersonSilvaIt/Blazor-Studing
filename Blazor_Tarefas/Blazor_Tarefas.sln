@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_Tarefas", "Blazor_Tarefas\Blazor_Tarefas.csproj", "{4FEBDD26-A536-46A7-9263-C2CDB4DE3743}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FEBDD26-A536-46A7-9263-C2CDB4DE3743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEBDD26-A536-46A7-9263-C2CDB4DE3743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEBDD26-A536-46A7-9263-C2CDB4DE3743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEBDD26-A536-46A7-9263-C2CDB4DE3743}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1722C568-C9C0-49A4-A8D6-F3B4772A134B}
+	EndGlobalSection
+EndGlobal
