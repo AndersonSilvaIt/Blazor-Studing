@@ -5,22 +5,29 @@
 {
     @*<p>Carregando...</p>*@
 
-    <Alerta Mensagem="Carregando..." >
+    <Alerta Mensagem="Carregando...">
 
-        <span style="color:blue">Carregando tarefas...</span>
+        <Conteudo1>
+            <img src="" />
+            <h1>Aguarde...</h1>
+        </Conteudo1>
 
+        <Conteudo2>
+            <h2>Carregando</h2>
+        </Conteudo2>
+
+        @*
+    <span style="color:blue">Carregando tarefas...</span>
+    *@
     </Alerta>
 
 } else if(!tarefas.Any())
 {
     @*<p>Ainda não existem tarefas...</p> *@
 
-    <Alerta Mensagem="Ainda não existem tarefas..." >
-        <div class="card">
-            <div class="card-body">
-                Você precisa cadastrar algumas tarefas
-            </div>
-        </div>
+    <Alerta Mensagem="Ainda não existem tarefas...">
+        <Conteudo1></Conteudo1>
+        <Conteudo2></Conteudo2>
     </Alerta>
 } else
 {

@@ -2,7 +2,7 @@
     <span class="oi oi-circle-x mr-2" aria-hidden="true"></span>
     <strong>@Mensagem</strong>
 </div>
-
+@*
 <div>
     if(@ChildContent == null){
 
@@ -11,10 +11,34 @@
     }else{
         @ChildContent
     }
+
+    </div>*@
+
+<div>
+    if(@Conteudo1 == null){
+
+    <span style="color: black;">Texto padrão.</span>
+
+    }else{
+    @Conteudo1
+    }
+
+</div>
+
+<div>
+    if(@Conteudo2 == null){
+
+    <span style="color: black;">Texto padrão.</span>
+
+    }else{
+    @Conteudo2
+    }
+
 </div>
 
 @code {
 
     [Parameter] public string Mensagem { get; set; }
-    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public RenderFragment Conteudo1 { get; set; }
+    [Parameter] public RenderFragment Conteudo2 { get; set; }
 }
