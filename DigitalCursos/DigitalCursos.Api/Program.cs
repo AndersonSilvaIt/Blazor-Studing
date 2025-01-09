@@ -1,4 +1,5 @@
 using DigitalCursos.Api.Context;
+using DigitalCursos.Api.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Sqlite");
 
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionString));
+builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
