@@ -1,0 +1,50 @@
+﻿@page "/alunos"
+@inject HttpClient http
+
+<h3>Alunos</h3>
+
+<br />
+
+@if(Alunos == null)
+{
+    <img src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" />
+} else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var aluno in Alunos)
+            {
+                <tr>
+                    <td>@aluno.AlunoId</td>
+                    <td>@aluno.Nome</td>
+                    <td>@aluno.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+
+
+@code {
+
+    public IEnumerable<Aluno> Alunos { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await GetAlunos();
+    }
+
+    protected async Task GetAlunos()
+    {
+        Alunos = await http.GetFromJsonAsync<IEnumerable<Aluno>>($"api/Alunos");
+    }
+}

@@ -6,11 +6,11 @@ namespace DigitalCursos.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlunoController: ControllerBase
+    public class AlunosController: ControllerBase
     {
         private readonly IAlunoRepository _alunoRepository;
 
-        public AlunoController(IAlunoRepository alunoRepository)
+        public AlunosController(IAlunoRepository alunoRepository)
         {
             _alunoRepository = alunoRepository;
         }

@@ -6,11 +6,11 @@ namespace DigitalCursos.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CursoController: ControllerBase
+    public class CursosController: ControllerBase
     {
         private readonly ICursoRepository _cursoRepository;
 
-        public CursoController(ICursoRepository cursoRepository)
+        public CursosController(ICursoRepository cursoRepository)
         {
             _cursoRepository = cursoRepository;
         }

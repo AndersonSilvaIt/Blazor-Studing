@@ -9,6 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("Sqlite");
 
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionString));
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+builder.Services.AddScoped<ICursoRepository, CursoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
