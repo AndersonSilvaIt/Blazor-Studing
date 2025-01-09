@@ -10,7 +10,7 @@ namespace DigitalCursos.Models.Models
         public int CargaHoraria { get; set; }
         public DateTime Inicio { get; set; }
         public decimal Preco { get; set; }
-        public string Logo { get; set; }
+        public byte[]? Logo { get; set; }
         public Collection<Aluno> Alunos { get; set; }
     }
 }
