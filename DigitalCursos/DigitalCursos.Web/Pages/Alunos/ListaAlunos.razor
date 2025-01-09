@@ -1,7 +1,11 @@
 ﻿@page "/alunos"
-@inject HttpClient http
+@inject IAlunoService alunoService
 
 <h3>Alunos</h3>
+
+<div>
+    <a href="aluno/create" class="btn btn-outline-secondary"> Criar Novo Aluno </a>
+</div>
 
 <br />
 
@@ -13,9 +17,9 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Idade</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +29,10 @@
                     <td>@aluno.AlunoId</td>
                     <td>@aluno.Nome</td>
                     <td>@aluno.Email</td>
+                    <td>
+                        <a href="/aluno/edit/@aluno.AlunoId" class="btn btn-success">Edita</a>
+                        <a href="/aluno/delete/@aluno.AlunoId" class="btn btn-danger">Deleta</a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -45,6 +53,7 @@
 
     protected async Task GetAlunos()
     {
-        Alunos = await http.GetFromJsonAsync<IEnumerable<Aluno>>($"api/Alunos");
+        //Alunos = await http.GetFromJsonAsync<IEnumerable<Aluno>>($"api/Alunos");
+        Alunos = await alunoService.GetAlunos();
     }
 }
