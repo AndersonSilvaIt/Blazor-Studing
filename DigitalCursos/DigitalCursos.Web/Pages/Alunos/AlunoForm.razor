@@ -1,0 +1,119 @@
+﻿<EditForm Model="@Aluno" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group row">
+
+        <label form="nome">Nome</label>
+        <div class="col-sm-4">
+            <InputText @bind-Value="Aluno.Nome" class="form-control" />
+            <ValidationMessage For="@(() => Aluno.Nome)" />
+        </div>
+
+        <label form="nome">Sobrenome</label>
+        <div class="col-sm-4">
+            <InputText @bind-Value="Aluno.Sobrenome" class="form-control" />
+            <ValidationMessage For="@(() => Aluno.Sobrenome)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="genero">Sexo</label>
+        <div class="col-sm-4">
+            <InputSelect @bind-Value="Aluno.Genero" class="form-control">
+                @foreach(var genero in Enum.GetValues(typeof(Genero)))
+                {
+                    <option value="@genero">@genero</option>
+                }
+
+            </InputSelect>
+
+        </div>
+    </div>
+
+    <label form="nascimento">Nascimento</label>
+    <div class="col-sm-4">
+        <InputDate @bind-Value="Aluno.Nascimento" class="form-control" />
+        <ValidationMessage For="@(() => Aluno.Nascimento)" />
+    </div>
+
+    <div class="form-group row">
+
+        <label for="curso">Curso: </label>
+
+        <div class="col-sm-4">
+
+            <select @onchange="CaregoriaSelectionChanged" class="form-control">
+                @if(cursos != null)
+                {
+                    @foreach(var curso in cursos)
+                    {
+                        <option value="@curso.CursoId" selected="@(curso.CursoId == Aluno.CursoId ? true : false)">
+                            @curso.CursoNome
+                        </option>
+                    }
+                }
+
+            </select>
+
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        @ButtonTextSubmit
+    </button>
+
+    <button class="btn btn-danger"
+            @onclick="@(() => navigation.NavigateTo("alunos"))">
+        @ButtonTextCancelar
+    </button>
+
+</EditForm>
+
+
+@code {
+
+    Curso[] cursos;
+
+    [Inject]
+    public NavigationManager navigation { get; set; }
+
+
+    [Inject]
+    public IAlunoService alunoService { get; set; }
+
+    [Parameter]
+    public Aluno Aluno { get; set; }
+
+    [Parameter]
+    public string ButtonTextSubmit { get; set; } = "Salvar";
+
+    [Parameter]
+    public string ButtonTextCancelar { get; set; } = "Cancelar";
+
+    [Parameter]
+    public EventCallback OnValidSubmit { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        //await  CarregaCursos();
+
+        if(Aluno.CursoId == 0)
+        {
+            Aluno.CursoId = cursos[0].CursoId;
+        }
+    }
+
+    void CaregoriaSelectionChanged(ChangeEventArgs e)
+    {
+        var teste = "";
+    }
+
+    //private async Task CarregaCursos()
+    //{
+    //    cursos = await cursoService.GetCursos();
+    //}
+
+}

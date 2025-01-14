@@ -1,0 +1,13 @@
+﻿@page "/aluno/create"
+@inject IAlunoService alunoService
+@inject NavigationManager navigation
+
+<h2>Novo Aluno</h2>
+
+<AlunoForm  Aluno="@aluno"  OnValidSubmit="CriarAluno">
+    
+</AlunoForm>
+
+@code {
+
+}
